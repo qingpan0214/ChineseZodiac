@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Nl2-zp-8yB">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Nl2-zp-8yB">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -26,9 +26,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="up.png" translatesAutoresizingMaskIntoConstraints="NO" id="W9J-Zk-Ljx">
-                                <rect key="frame" x="0.0" y="64" width="375" height="120"/>
-                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="I born in" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dx9-SE-Mux">
                                 <rect key="frame" x="131" y="144" width="114" height="44"/>
                                 <constraints>
@@ -67,6 +64,9 @@
                                     <constraint firstAttribute="height" constant="165" id="a3g-zs-7Oe"/>
                                 </constraints>
                             </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="up.png" translatesAutoresizingMaskIntoConstraints="NO" id="W9J-Zk-Ljx">
+                                <rect key="frame" x="0.0" y="64" width="375" height="120"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.27058422565460205" green="0.3103269636631012" blue="0.53069943189620972" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -99,7 +99,7 @@
         <!--Result-->
         <scene sceneID="wKn-y9-0g2">
             <objects>
-                <viewController id="n7j-wz-IV8" sceneMemberID="viewController">
+                <viewController id="n7j-wz-IV8" customClass="ResuleViewController" customModule="ChineseZodiac" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="tjy-Nc-x1Y"/>
                         <viewControllerLayoutGuide type="bottom" id="dfj-O4-hkc"/>
@@ -108,9 +108,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="0.png" translatesAutoresizingMaskIntoConstraints="NO" id="jdB-yk-lI9">
-                                <rect key="frame" x="60" y="76" width="256" height="256"/>
-                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZxK-D2-aMh">
                                 <rect key="frame" x="134" y="594" width="107" height="30"/>
                                 <state key="normal" title="Today's Forture"/>
@@ -118,16 +115,22 @@
                                     <segue destination="HdT-77-Ui6" kind="show" id="R8H-of-7aQ"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="0.png" translatesAutoresizingMaskIntoConstraints="NO" id="jdB-yk-lI9">
+                                <rect key="frame" x="59" y="72" width="256" height="256"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="jdB-yk-lI9" firstAttribute="centerX" secondItem="ZxK-D2-aMh" secondAttribute="centerX" id="Glc-st-MlP"/>
                             <constraint firstItem="jdB-yk-lI9" firstAttribute="centerX" secondItem="DXD-Nm-YwY" secondAttribute="centerX" id="H9d-or-iVh"/>
-                            <constraint firstItem="jdB-yk-lI9" firstAttribute="top" secondItem="tjy-Nc-x1Y" secondAttribute="bottom" constant="12" id="WSW-1G-jxh"/>
+                            <constraint firstItem="jdB-yk-lI9" firstAttribute="top" secondItem="tjy-Nc-x1Y" secondAttribute="bottom" constant="8" id="WSW-1G-jxh"/>
                             <constraint firstItem="dfj-O4-hkc" firstAttribute="top" secondItem="ZxK-D2-aMh" secondAttribute="bottom" constant="43" id="ahj-KZ-uPC"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Result" id="hkB-JF-jWA"/>
+                    <connections>
+                        <outlet property="zodiac" destination="jdB-yk-lI9" id="cxj-j9-bWb"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GOc-ux-pRA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
